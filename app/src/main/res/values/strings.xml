@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Viraly</string>
+    <string name="title_sign_in">Sign in</string>
+    <string name="login_email_hint">Email Address</string>
+    <string name="login_password_hint">Password</string>
+    <string name="error_email_empty"> </string>
+    <string name="error_password_empty">Password</string>
+    <string name="action_remember_me">Remember Me</string>
+    <string name="action_forgot_password">Forgot Password?</string>
+    <string name="action_login">Log In</string>
+</resources>
