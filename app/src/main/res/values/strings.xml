@@ -3,9 +3,12 @@
     <string name="title_sign_in">Sign in</string>
     <string name="login_email_hint">Email Address</string>
     <string name="login_password_hint">Password</string>
-    <string name="error_email_empty"> </string>
-    <string name="error_password_empty">Password</string>
     <string name="action_remember_me">Remember Me</string>
     <string name="action_forgot_password">Forgot Password?</string>
     <string name="action_login">Log In</string>
+    <string name="unknown_username">Unknown username. Check again or try your email address</string>
+    <string name="empty_username">Error: The username filed is empty.</string>
+    <string name="empty_password">Error: The password filed is empty.</string>
+    <string name="empty_username_and_password">Error: The username filed is empty.\nError: The password filed is empty.</string>
+
 </resources>

@@ -8,10 +8,11 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     android:padding="@dimen/dp40">
+
     <ImageView
-        android:src="@drawable/viraly_145x197"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp150"/>
+        android:layout_height="@dimen/dp100"
+        android:src="@drawable/viraly_145x197" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,6 +21,34 @@
         android:fontFamily="@font/gilroy_regular"
         android:text="@string/title_sign_in"
         android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/text_view_empty_username_and_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80"
+        android:layout_marginTop="@dimen/dp30"
+        android:background="@drawable/error_background"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="5dp"
+        android:paddingLeft="@dimen/dp10"
+        android:text="@string/empty_username_and_password"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/text_view_empty_username"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp30"
+        android:background="@drawable/error_background"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="5dp"
+        android:paddingLeft="@dimen/dp10"
+        android:text="@string/empty_username"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

@@ -9,6 +9,7 @@
     <color name="colorDarkYellow">#FEBC08</color>
     <color name="colorBlue">#007AFF</color>
     <color name="colorGrey">#5c5a5c</color>
+    <color name="colorError">#ef3e46</color>
     <color name="colorLightOrange">#ff865a</color>
     <color name="colorBackground">#faf9f7</color>
 </resources>
