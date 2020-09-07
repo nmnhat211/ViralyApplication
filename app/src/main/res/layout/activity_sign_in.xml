@@ -20,7 +20,9 @@
         android:layout_marginTop="@dimen/dp30"
         android:fontFamily="@font/gilroy_regular"
         android:text="@string/title_sign_in"
-        android:textSize="28sp" />
+        android:textColor="@color/colorLightOrange"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/text_view_empty_username_and_password"
@@ -57,12 +59,12 @@
         android:theme="@style/TextLabel">
 
         <EditText
-            android:id="@+id/edit_text_mail"
+            android:id="@+id/edit_text_mail_sign_up"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp70"
             android:background="@drawable/edit_text_background"
             android:fontFamily="@font/gilroy_medium"
-            android:hint="@string/login_email_hint"
+            android:hint="@string/email_hint"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
             android:paddingLeft="@dimen/dp20"
@@ -79,12 +81,12 @@
         app:passwordToggleEnabled="true">
 
         <EditText
-            android:id="@+id/edit_text_password"
+            android:id="@+id/edit_text_password_sign_up"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp70"
             android:background="@drawable/edit_text_background"
             android:fontFamily="@font/gilroy_medium"
-            android:hint="@string/login_password_hint"
+            android:hint="@string/password_hint"
             android:imeOptions="actionGo"
             android:inputType="textPassword"
             android:paddingLeft="@dimen/dp20"
@@ -105,7 +107,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/gilroy_medium"
             android:text="@string/action_remember_me"
-            android:textColor="@color/colorSimple"
+            android:textColor="@color/colorSimpleText"
             android:theme="@style/checkBoxStyle" />
 
         <TextView
@@ -123,12 +125,12 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_login_account"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp70"
-        android:background="@drawable/btn_login_pressed"
+        android:background="@drawable/btn_pressed_background"
         android:fontFamily="@font/gilroy_medium"
-        android:text="@string/action_login"
+        android:text="@string/action_login_account"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite" />
 

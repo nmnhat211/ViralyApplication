@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp400"
+        android:background="@color/colorLightOrange" />
+
+    <ImageView
+        android:id="@+id/image_view_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_marginVertical="@dimen/dp70"
+        android:src="@drawable/viraly_145x197" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view_title"
+        android:layout_marginLeft="@dimen/dp30"
+        android:layout_marginRight="@dimen/dp30"
+        app:cardCornerRadius="@dimen/dp30"
+        app:cardElevation="@dimen/dp10"
+        app:cardPreventCornerOverlap="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_up_background"
+            android:orientation="vertical"
+            android:padding="@dimen/dp40">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/title_sign_up"
+                android:textColor="@color/colorLightOrange"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/edit_text_username_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp70"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:hint="@string/username_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textAutoComplete"
+                    android:paddingLeft="@dimen/dp20"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/cursor_color" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/edit_text_mail_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp70"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:hint="@string/email_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="@dimen/dp20"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/cursor_color" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:theme="@style/TextLabel"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/edit_text_password_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp70"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:hint="@string/password_hint"
+                    android:imeOptions="actionGo"
+                    android:inputType="textPassword"
+                    android:paddingLeft="@dimen/dp20"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/cursor_color" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp20"
+                android:paddingBottom="@dimen/dp20">
+
+                <CheckBox
+                    android:id="@+id/checkbox_terms_and_conditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/i_agree"
+                    android:textColor="@color/colorSimpleText"
+                    android:theme="@style/checkBoxStyle" />
+
+                <TextView
+                    android:id="@+id/text_view_term_and_conditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/term_amp_conditions"
+                    android:textColor="@color/colorLightOrange"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_create_account"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp70"
+                android:background="@drawable/btn_pressed_background"
+                android:text="@string/action_create_account"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

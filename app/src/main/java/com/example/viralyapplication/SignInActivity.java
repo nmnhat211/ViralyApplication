@@ -15,17 +15,17 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
     private Button mButtonLogin;
     private LinearLayout mLinearLayoutParent;
     private CheckBox mCheckBoxRememberMe;
-    private TextView mTextViewForgotPassword, mTextViewEmptyUsername, mTextViewEmptyUsernameAndPassword;
-    private EditText mEditTextEmail, mEditTextPassword;
+    private TextView mTxtForgotPassword, mTxtEmptyUsernameOrPassword, mTxtEmptyUsernameAndPassword;
+    private EditText mEdtEmail, mEdtPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_in);
         initView();
         initEvent();
     }
@@ -33,16 +33,16 @@ public class LoginActivity extends AppCompatActivity {
     private void initView() {
         mLinearLayoutParent = findViewById(R.id.linear_login);
 
-        mTextViewEmptyUsernameAndPassword = findViewById(R.id.text_view_empty_username_and_password);
-        mTextViewEmptyUsername = findViewById(R.id.text_view_empty_username);
+        mTxtEmptyUsernameAndPassword = findViewById(R.id.text_view_empty_username_and_password);
+        mTxtEmptyUsernameOrPassword = findViewById(R.id.text_view_empty_username);
 
-        mTextViewEmptyUsernameAndPassword.setVisibility(View.GONE);
-        mTextViewEmptyUsername.setVisibility(View.GONE);
+        mTxtEmptyUsernameAndPassword.setVisibility(View.GONE);
+        mTxtEmptyUsernameOrPassword.setVisibility(View.GONE);
 
-        mEditTextEmail = findViewById(R.id.edit_text_mail);
-        mEditTextPassword = findViewById(R.id.edit_text_password);
+        mEdtEmail = findViewById(R.id.edit_text_mail_sign_up);
+        mEdtPassword = findViewById(R.id.edit_text_password_sign_up);
 
-        mButtonLogin = findViewById(R.id.button_login);
+        mButtonLogin = findViewById(R.id.button_login_account);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -52,13 +52,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    if (mEditTextEmail.isFocused() || mEditTextPassword.isFocused()) {
+                    if (mEdtEmail.isFocused() || mEdtPassword.isFocused()) {
                         Rect outRect = new Rect();
-                        mEditTextEmail.getGlobalVisibleRect(outRect);
-                        mEditTextPassword.getGlobalVisibleRect(outRect);
+                        mEdtEmail.getGlobalVisibleRect(outRect);
+                        mEdtPassword.getGlobalVisibleRect(outRect);
                         if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
-                            mEditTextEmail.clearFocus();
-                            mEditTextPassword.clearFocus();
+                            mEdtEmail.clearFocus();
+                            mEdtPassword.clearFocus();
                             InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                             imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                         }
@@ -73,28 +73,27 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String mUsername, mPassword;
-                mUsername = mEditTextEmail.getText().toString();
-                mPassword = mEditTextPassword.getText().toString();
+                mUsername = mEdtEmail.getText().toString();
+                mPassword = mEdtPassword.getText().toString();
                 checkEmpty(mUsername, mPassword);
-                mEditTextEmail.clearFocus();
-                mEditTextPassword.clearFocus();
+                mEdtEmail.clearFocus();
+                mEdtPassword.clearFocus();
             }
         });
     }
 
     private void checkEmpty(String username, String password) {
+        mTxtEmptyUsernameOrPassword.setVisibility(View.GONE);
+        mTxtEmptyUsernameAndPassword.setVisibility(View.GONE);
 
         if (username.equals("") && password.equals("")) {
-            mTextViewEmptyUsernameAndPassword.setVisibility(View.VISIBLE);
-            mTextViewEmptyUsername.setVisibility(View.GONE);
+            mTxtEmptyUsernameAndPassword.setVisibility(View.VISIBLE);
         } else if (username.equals("")) {
-            mTextViewEmptyUsername.setVisibility(View.VISIBLE);
-            mTextViewEmptyUsername.setText(R.string.empty_username);
-            mTextViewEmptyUsernameAndPassword.setVisibility(View.GONE);
+            mTxtEmptyUsernameOrPassword.setText(R.string.empty_username);
+            mTxtEmptyUsernameOrPassword.setVisibility(View.VISIBLE);
         } else if (password.equals("")) {
-            mTextViewEmptyUsername.setVisibility(View.VISIBLE);
-            mTextViewEmptyUsername.setText(R.string.empty_password);
-            mTextViewEmptyUsernameAndPassword.setVisibility(View.GONE);
+            mTxtEmptyUsernameOrPassword.setText(R.string.empty_password);
+            mTxtEmptyUsernameOrPassword.setVisibility(View.VISIBLE);
         }
     }
 
