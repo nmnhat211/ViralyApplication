@@ -1,137 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linear_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/colorWhite"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     android:padding="@dimen/dp40">
+
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp100"
         android:src="@drawable/viraly_145x197" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp30"
-        android:fontFamily="@font/gilroy_regular"
-        android:text="@string/title_sign_in"
-        android:textColor="@color/colorLightOrange"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/text_view_empty_username_and_password"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp80"
-        android:layout_marginTop="@dimen/dp30"
-        android:background="@drawable/error_background"
-        android:fontFamily="@font/gilroy_bold"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="5dp"
-        android:paddingLeft="@dimen/dp10"
-        android:text="@string/empty_username_and_password"
-        android:textColor="@color/colorWhite"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/text_view_empty_username"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp60"
-        android:layout_marginTop="@dimen/dp30"
-        android:background="@drawable/error_background"
-        android:fontFamily="@font/gilroy_bold"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="5dp"
-        android:paddingLeft="@dimen/dp10"
-        android:text="@string/empty_username"
-        android:textColor="@color/colorWhite"
-        android:textSize="15sp" />
-
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp30"
-        android:theme="@style/TextLabel">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edit_text_mail_sign_up"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/title_sign_in"
+                android:textColor="@color/colorLightOrange"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/not_a_member_text"
+                    android:textColor="@color/colorSimpleText" />
+
+                <TextView
+                    android:id="@+id/text_view_sign_up_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/sign_up_now_text"
+                    android:textColor="@drawable/selectors_color"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <include
+            layout="@layout/layout_input_text"
+            android:layout_marginVertical="@dimen/dp40"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp40">
+
+            <CheckBox
+                android:id="@+id/checkbox_remember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/action_remember_me"
+                android:textColor="@color/colorSimpleText"
+                android:theme="@style/checkBoxStyle" />
+
+            <TextView
+                android:id="@+id/text_view_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/action_forgot_password"
+                android:textColor="@drawable/selectors_color"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_login_account"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp70"
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/gilroy_medium"
-            android:hint="@string/email_hint"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/dp20"
-            android:singleLine="true"
-            android:textCursorDrawable="@drawable/cursor_color" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp15"
-        android:theme="@style/TextLabel"
-        app:passwordToggleEnabled="true">
-
-        <EditText
-            android:id="@+id/edit_text_password_sign_up"
+            android:text="@string/action_login_account"
+            android:theme="@style/AccentButton" />
+        <Button
+            android:id="@+id/button_check_verify_account"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp70"
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/gilroy_medium"
-            android:hint="@string/password_hint"
-            android:imeOptions="actionGo"
-            android:inputType="textPassword"
-            android:paddingLeft="@dimen/dp20"
-            android:singleLine="true"
-            android:textCursorDrawable="@drawable/cursor_color" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp20"
-        android:layout_marginBottom="@dimen/dp20">
-
-        <CheckBox
-            android:id="@+id/checkbox_remember"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gilroy_medium"
-            android:text="@string/action_remember_me"
-            android:textColor="@color/colorSimpleText"
-            android:theme="@style/checkBoxStyle" />
-
-        <TextView
-            android:id="@+id/text_view_forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:fontFamily="@font/gilroy_medium"
-            android:text="@string/action_forgot_password"
-            android:textColor="@color/colorLightOrange"
-            android:textStyle="bold" />
-
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/button_login_account"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp70"
-        android:background="@drawable/btn_pressed_background"
-        android:fontFamily="@font/gilroy_medium"
-        android:text="@string/action_login_account"
-        android:textAllCaps="false"
-        android:textColor="@color/colorWhite" />
+            android:text="Check verify account"
+            android:theme="@style/AccentButton" />
+    </LinearLayout>
 
 </LinearLayout>
