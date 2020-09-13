@@ -8,29 +8,53 @@
     </style>
 
     <!--CheckBox theme-->
-    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+    <style name="CheckBoxStyle" parent="Base.Theme.AppCompat">
         <item name="colorControlNormal">@color/colorSimpleText</item>
         <item name="colorControlActivated">@color/colorLightOrange</item>
     </style>
+    
 
-    <!--    HintStyle TextInput layout -->
-    <style name="HintStyle" parent="android:TextAppearance">
-        <item name="android:textColorHint">@color/colorSimpleText</item>
+    <style name="SubTextViewStyle">
+
+
+    </style>
+    
+    <style name="TitleTextViewStyle">
+        <item name="android:fontFamily">@font/gilroy_medium</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="LabelTextInputStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/gilroy_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorEnabled">true</item>
+        <item name="android:textColorHint">@color/colorLightOrange</item>
+        <item name="hintTextAppearance">@style/LabelTextInputStyle</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxBackgroundColor">@color/colorBackground</item>
+    </style>
+
+
     <!--EditText theme   -->
-    <style name="EditTextLabel" parent="TextAppearance.AppCompat">
-        <item name="android:textCursorDrawable">@drawable/cursor_color</item>
+    <style name="EditTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textCursorDrawable">@drawable/cursor_edit_text_shape</item>
         <item name="android:fontFamily">@font/gilroy_medium</item>
     </style>
 
-
     <!--Button theme-->
-    <style name="AccentButton" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="colorButtonNormal">@color/colorLightOrange</item>
+    <style name="ButtonTheme" parent="ThemeOverlay.AppCompat.Dark">
         <item name="colorAccent">@color/colorLightOrange</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:textAllCaps">false</item>
-        <item name="fontFamily">@font/gilroy_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/gilroy_bold</item>
+        <item name="android:textStyle">bold</item>
     </style>
+
 </resources>

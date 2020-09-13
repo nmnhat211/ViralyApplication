@@ -12,15 +12,12 @@
 
     <TextView
         android:id="@+id/text_view_title"
+        style="@style/TitleTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginVertical="@dimen/dp60"
-        android:fontFamily="@font/gilroy_regular"
-        android:text="@string/title_sign_up"
-        android:textColor="@color/colorWhite"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:text="@string/title_sign_up" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -45,86 +42,48 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input_name"
+                    style="@style/TextInputStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dp20"
                     android:layout_weight="1"
-                    android:textColorHint="@color/colorSimpleText">
+                    android:hint="@string/password_hint">
 
                     <EditText
-                        android:id="@+id/edit_text_name_sign_up"
+                        android:id="@+id/edit_text_name"
+                        style="@style/EditTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp70"
-                        android:background="@drawable/edit_text_background"
-                        android:hint="@string/name_hint"
                         android:imeOptions="actionNext"
-                        android:inputType="textAutoComplete"
-                        android:paddingLeft="@dimen/dp20"
-                        android:theme="@style/EditTextLabel" />
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="@dimen/dp20" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input_username"
+                    style="@style/TextInputStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp20"
                     android:layout_weight="1"
-                    android:textColorHint="@color/colorSimpleText">
+                    android:hint="@string/username_hint">
 
                     <EditText
-                        android:id="@+id/edit_text_username_sign_up"
+                        android:id="@+id/edit_text_username"
+                        style="@style/EditTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp70"
-                        android:background="@drawable/edit_text_background"
-                        android:hint="@string/username_hint"
                         android:imeOptions="actionNext"
-                        android:inputType="textAutoComplete"
-                        android:paddingLeft="@dimen/dp20"
-                        android:theme="@style/EditTextLabel" />
+                        android:inputType="text"
+                        android:paddingHorizontal="@dimen/dp20" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
 
             </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp30"
-                android:textColorHint="@color/colorSimpleText">
-
-                <EditText
-                    android:id="@+id/edit_text_mail_sign_up"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp70"
-                    android:background="@drawable/edit_text_background"
-                    android:hint="@string/email_hint"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="@dimen/dp20"
-                    android:theme="@style/EditTextLabel" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp15"
-                android:textColorHint="@color/colorSimpleText"
-                app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:id="@+id/edit_text_password_sign_up"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp70"
-                    android:background="@drawable/edit_text_background"
-                    android:hint="@string/password_hint"
-                    android:imeOptions="actionGo"
-                    android:inputType="textPassword"
-                    android:paddingLeft="@dimen/dp20"
-                    android:theme="@style/EditTextLabel" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+            <include layout="@layout/layout_email_and_password" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -140,7 +99,7 @@
                     android:fontFamily="@font/gilroy_regular"
                     android:text="@string/i_agree_text"
                     android:textColor="@color/colorSimpleText"
-                    android:theme="@style/checkBoxStyle" />
+                    android:theme="@style/CheckBoxStyle" />
 
                 <TextView
                     android:id="@+id/text_view_term_and_conditions"
@@ -156,16 +115,12 @@
 
             <Button
                 android:id="@+id/button_create_account"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp70"
                 android:layout_marginBottom="@dimen/dp10"
-                android:background="@drawable/btn_pressed_background"
-                android:fontFamily="@font/gilroy_medium"
-                android:shadowRadius="@android:integer/config_shortAnimTime"
                 android:text="@string/action_create_account"
-                android:textAllCaps="false"
-                android:textColor="@color/colorWhite" />
-
+                android:theme="@style/ButtonTheme" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

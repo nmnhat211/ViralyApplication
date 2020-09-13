@@ -95,8 +95,9 @@ public class SignInActivity extends AppCompatActivity {
                 String mEmail, mPassword;
 //                mEmail = mTextInputEmail.getEditText().getText().toString();
 //                mPassword = mTextInputPassword.getEditText().getText().toString();
-                mEmail = "nmnhat";
-                mPassword = "nmnhat";
+//                nmnhat nmnhat;
+                mEmail = "khoanguyen10110";
+                mPassword = "khoanv";
                 loginAuthAccount(mEmail, mPassword);
                 mEditTextEmail.clearFocus();
                 mEditTextPassword.clearFocus();
@@ -167,7 +168,6 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<ModelLogin> call, Response<ModelLogin> response) {
                 if (response.code() == 200) {
                     Log.e("status", "" + response.raw().headers().toString());
-
                     Toast.makeText(SignInActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(SignInActivity.this, "Email or Password incorrect", Toast.LENGTH_SHORT).show();

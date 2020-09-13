@@ -13,7 +13,7 @@
                         android:startColor="@color/colorLightOrange"
                         android:type="linear" />
 
-                    <corners android:radius="@dimen/dp60" />
+                    <corners android:radius="@dimen/dp20" />
                 </shape>
             </item>
         </ripple>
