@@ -11,6 +11,8 @@
     <string name="action_login_account">Log In</string>
     <string name="action_create_account">Create account</string>
     <string name="action_check_email_account">Check verify account</string>
+    <string name="successfully_verify_status">Verify account successfully</string>
+    <string name="failed_verify_status">Verify account failed</string>
     <string name="unknown_username">Unknown username. Check again or try your email address</string>
     <string name="empty_email">Error: The username filed is empty.</string>
     <string name="empty_password">Error: The password filed is empty.</string>
@@ -19,5 +21,11 @@
     <string name="term_amp_conditions_text"><![CDATA[term & conditions]]></string>
     <string name="not_a_member_text">Not a member?  \u0020</string>
     <string name="sign_up_now_text">Sign up now</string>
+    <string name="cant_connect_to_server_status">Can\'t Connect To Sever, Please Try Again!</string>
+    <string name="login_successfully">Login Successfully</string>
+    <string name="title_welcome_to_app">Welcome to Viraly</string>
+    <string name="sign_up_with_google">Sign up with Google</string>
+    <string name="content_text_view_of_welcome_screen">This is a social network to help you share your photos and videos with everyone!</string>
+    <string name="have_account">Already have an account?</string>
 
 </resources>

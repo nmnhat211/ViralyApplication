@@ -9,10 +9,7 @@
     android:padding="@dimen/dp40">
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp100"
-        android:src="@drawable/viraly_145x197" />
+    <include layout="@layout/layout_top_welcome_screen"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,12 +44,10 @@
 
                 <TextView
                     android:id="@+id/text_view_sign_up_now"
+                    style="@style/SubTextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/gilroy_regular"
-                    android:text="@string/sign_up_now_text"
-                    android:textColor="@color/selectors_color"
-                    android:textStyle="bold" />
+                    android:text="@string/sign_up_now_text" />
 
             </LinearLayout>
 
@@ -71,23 +66,21 @@
 
             <CheckBox
                 android:id="@+id/checkbox_remember"
+                style="@style/SubTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gilroy_regular"
                 android:text="@string/action_remember_me"
                 android:textColor="@color/colorSimpleText"
                 android:theme="@style/CheckBoxStyle" />
 
             <TextView
                 android:id="@+id/text_view_forgot_password"
+                style="@style/SubTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/gilroy_regular"
-                android:text="@string/action_forgot_password"
-                android:textColor="@color/selectors_color"
-                android:textStyle="bold" />
+                android:text="@string/action_forgot_password" />
 
         </RelativeLayout>
 
@@ -99,13 +92,6 @@
             android:text="@string/action_login_account"
             android:theme="@style/ButtonTheme" />
 
-        <Button
-            android:id="@+id/button_check_verify_account"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp70"
-            android:text="@string/action_check_email_account"
-            android:theme="@style/ButtonTheme" />
     </LinearLayout>
 
 </LinearLayout>

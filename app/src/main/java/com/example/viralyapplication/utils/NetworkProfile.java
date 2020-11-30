@@ -1,4 +1,4 @@
-package com.example.viralyapplication;
+package com.example.viralyapplication.utils;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

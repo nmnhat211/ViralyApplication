@@ -1,4 +1,4 @@
-package com.example.viralyapplication;
+package com.example.viralyapplication.model.login;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

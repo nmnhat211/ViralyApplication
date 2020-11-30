@@ -12,13 +12,15 @@
         <item name="colorControlNormal">@color/colorSimpleText</item>
         <item name="colorControlActivated">@color/colorLightOrange</item>
     </style>
-    
+
 
     <style name="SubTextViewStyle">
-
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/selectors_color</item>
+        <item name="android:fontFamily">@font/gilroy_regular</item>
 
     </style>
-    
+
     <style name="TitleTextViewStyle">
         <item name="android:fontFamily">@font/gilroy_medium</item>
         <item name="android:textColor">@color/colorWhite</item>
@@ -36,12 +38,12 @@
         <item name="errorEnabled">true</item>
         <item name="android:textColorHint">@color/colorLightOrange</item>
         <item name="hintTextAppearance">@style/LabelTextInputStyle</item>
-        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeColor">@color/box_stroke_color</item>
         <item name="boxBackgroundColor">@color/colorBackground</item>
     </style>
 
 
-    <!--EditText theme   -->
+    <!--EditText style  -->
     <style name="EditTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textCursorDrawable">@drawable/cursor_edit_text_shape</item>
         <item name="android:fontFamily">@font/gilroy_medium</item>

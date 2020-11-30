@@ -1,16 +1,11 @@
-package com.example.viralyapplication;
+package com.example.viralyapplication.login;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.ColorFilter;
 import android.graphics.Rect;
-import android.media.session.MediaSession;
-import android.os.Build;
 import android.os.Bundle;
 
 import retrofit2.Call;
@@ -28,6 +23,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.viralyapplication.api.LoginApi;
+import com.example.viralyapplication.model.login.ModelLogin;
+import com.example.viralyapplication.model.email.EmailVerify;
+import com.example.viralyapplication.R;
+import com.example.viralyapplication.utils.NetworkProfile;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.HashMap;
@@ -62,7 +62,7 @@ public class SignInActivity extends AppCompatActivity {
         mEditTextPassword = findViewById(R.id.edit_text_password);
 
         mButtonLogin = findViewById(R.id.button_login_account);
-        mButtonCheckVerify = findViewById(R.id.button_check_verify_account);
+//        mButtonCheckVerify = findViewById(R.id.button_check_verify_account);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -104,13 +104,6 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        mButtonCheckVerify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkVerify();
-            }
-        });
-
         //Pass to sign up screen
         mTxtSignUpNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,13 +142,9 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
-//    private void updateBackgroundColor(EditText editText, ) {
-//        editText.getBackground().setColorFilter(getColor(R.color.colorWhite));
-//    }
-
 
     private void loginAuthAccount(String username, String password) {
-        ApiLoginScreen mLoginApi = NetworkProfile.getRetrofitInstance().create(ApiLoginScreen.class);
+        LoginApi mLoginApi = NetworkProfile.getRetrofitInstance().create(LoginApi.class);
 
         Map<String, String> requestBody = new HashMap<>();
 
@@ -168,9 +157,9 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<ModelLogin> call, Response<ModelLogin> response) {
                 if (response.code() == 200) {
                     Log.e("status", "" + response.raw().headers().toString());
-                    Toast.makeText(SignInActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, R.string.login_successfully, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SignInActivity.this, "Email or Password incorrect", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, R.string.unknown_username, Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -183,21 +172,21 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void checkVerify() {
-        ApiLoginScreen mCheckVerify = NetworkProfile.getRetrofitInstance().create(ApiLoginScreen.class);
-        Call<ModelVerify> call = mCheckVerify.getVerify();
-        call.enqueue(new Callback<ModelVerify>() {
+        LoginApi mCheckVerify = NetworkProfile.getRetrofitInstance().create(LoginApi.class);
+        Call<EmailVerify> call = mCheckVerify.getVerify();
+        call.enqueue(new Callback<EmailVerify>() {
             @Override
-            public void onResponse(Call<ModelVerify> call, Response<ModelVerify> response) {
+            public void onResponse(Call<EmailVerify> call, Response<EmailVerify> response) {
                 if (response.code() == 200) {
-                    Toast.makeText(SignInActivity.this, "Get verify successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, R.string.successfully_verify_status, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SignInActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, R.string.failed_verify_status, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<ModelVerify> call, Throwable t) {
-                Toast.makeText(SignInActivity.this, "Connect error", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<EmailVerify> call, Throwable t) {
+                Toast.makeText(SignInActivity.this, R.string.cant_connect_to_server_status, Toast.LENGTH_SHORT).show();
                 Log.e("status", "" + t.getMessage());
             }
         });
