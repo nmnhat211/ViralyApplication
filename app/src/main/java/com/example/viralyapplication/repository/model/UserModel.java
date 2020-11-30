@@ -1,9 +1,9 @@
-package com.example.viralyapplication.model.login;
+package com.example.viralyapplication.repository.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class UserModel {
     @SerializedName("is_banned")
     @Expose
     private Boolean isBanned;

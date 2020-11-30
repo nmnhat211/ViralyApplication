@@ -1,9 +1,9 @@
-package com.example.viralyapplication.model.email;
+package com.example.viralyapplication.repository.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class EmailVerify {
+public class EmailVerifyModel {
     @SerializedName("status")
     @Expose
     private String status;

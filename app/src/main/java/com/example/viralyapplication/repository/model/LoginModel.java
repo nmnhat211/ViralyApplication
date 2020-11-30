@@ -1,15 +1,15 @@
-package com.example.viralyapplication.model.login;
+package com.example.viralyapplication.repository.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ModelLogin {
+public class LoginModel {
     @SerializedName("isAuthenticated")
     @Expose
     private Boolean isAuthenticated;
     @SerializedName("user")
     @Expose
-    private User user;
+    private UserModel userModel;
 
     public Boolean getIsAuthenticated() {
         return isAuthenticated;
@@ -19,11 +19,11 @@ public class ModelLogin {
         this.isAuthenticated = isAuthenticated;
     }
 
-    public User getUser() {
-        return user;
+    public UserModel getUserModel() {
+        return userModel;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserModel(UserModel userModel) {
+        this.userModel = userModel;
     }
 }

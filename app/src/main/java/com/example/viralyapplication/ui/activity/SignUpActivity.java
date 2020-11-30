@@ -1,4 +1,4 @@
-package com.example.viralyapplication.login;
+package com.example.viralyapplication.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

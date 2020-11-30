@@ -1,4 +1,4 @@
-package com.example.viralyapplication.login;
+package com.example.viralyapplication.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,9 +23,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.viralyapplication.api.LoginApi;
-import com.example.viralyapplication.model.login.ModelLogin;
-import com.example.viralyapplication.model.email.EmailVerify;
+import com.example.viralyapplication.repository.api.LoginApi;
+import com.example.viralyapplication.repository.model.LoginModel;
+import com.example.viralyapplication.repository.model.EmailVerifyModel;
 import com.example.viralyapplication.R;
 import com.example.viralyapplication.utils.NetworkProfile;
 import com.google.android.material.textfield.TextInputLayout;
@@ -151,10 +151,10 @@ public class SignInActivity extends AppCompatActivity {
         requestBody.put("email", username);
         requestBody.put("password", password);
 
-        Call<ModelLogin> callRequest = mLoginApi.loginAccount(requestBody);
-        callRequest.enqueue(new Callback<ModelLogin>() {
+        Call<LoginModel> callRequest = mLoginApi.loginAccount(requestBody);
+        callRequest.enqueue(new Callback<LoginModel>() {
             @Override
-            public void onResponse(Call<ModelLogin> call, Response<ModelLogin> response) {
+            public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
                 if (response.code() == 200) {
                     Log.e("status", "" + response.raw().headers().toString());
                     Toast.makeText(SignInActivity.this, R.string.login_successfully, Toast.LENGTH_SHORT).show();
@@ -164,7 +164,7 @@ public class SignInActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ModelLogin> call, Throwable t) {
+            public void onFailure(Call<LoginModel> call, Throwable t) {
                 Toast.makeText(SignInActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.e("status: ", "" + t.getMessage());
             }
@@ -173,10 +173,10 @@ public class SignInActivity extends AppCompatActivity {
 
     private void checkVerify() {
         LoginApi mCheckVerify = NetworkProfile.getRetrofitInstance().create(LoginApi.class);
-        Call<EmailVerify> call = mCheckVerify.getVerify();
-        call.enqueue(new Callback<EmailVerify>() {
+        Call<EmailVerifyModel> call = mCheckVerify.getVerify();
+        call.enqueue(new Callback<EmailVerifyModel>() {
             @Override
-            public void onResponse(Call<EmailVerify> call, Response<EmailVerify> response) {
+            public void onResponse(Call<EmailVerifyModel> call, Response<EmailVerifyModel> response) {
                 if (response.code() == 200) {
                     Toast.makeText(SignInActivity.this, R.string.successfully_verify_status, Toast.LENGTH_SHORT).show();
                 } else {
@@ -185,7 +185,7 @@ public class SignInActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<EmailVerify> call, Throwable t) {
+            public void onFailure(Call<EmailVerifyModel> call, Throwable t) {
                 Toast.makeText(SignInActivity.this, R.string.cant_connect_to_server_status, Toast.LENGTH_SHORT).show();
                 Log.e("status", "" + t.getMessage());
             }
