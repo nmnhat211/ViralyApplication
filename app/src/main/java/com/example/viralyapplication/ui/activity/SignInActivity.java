@@ -27,7 +27,7 @@ import com.example.viralyapplication.repository.api.LoginApi;
 import com.example.viralyapplication.repository.model.LoginModel;
 import com.example.viralyapplication.repository.model.EmailVerifyModel;
 import com.example.viralyapplication.R;
-import com.example.viralyapplication.utils.NetworkProfile;
+import com.example.viralyapplication.utility.NetworkProfile;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.HashMap;
@@ -51,7 +51,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mLinearLayoutParent = findViewById(R.id.linear_login);
+        mLinearLayoutParent = findViewById(R.id.root_login);
 
         mTxtSignUpNow = findViewById(R.id.text_view_sign_up_now);
 

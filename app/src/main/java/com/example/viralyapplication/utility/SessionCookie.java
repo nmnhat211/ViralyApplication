@@ -1,4 +1,4 @@
-package com.example.viralyapplication.utils;
+package com.example.viralyapplication.utility;
 
 import android.util.Log;
 
