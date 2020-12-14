@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.view.View.OnClickListener;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -14,7 +13,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.viralyapplication.R;
 
-public abstract class BaseFragmentActivity extends FragmentActivity implements OnClickListener {
+public abstract class BaseFragmentActivity extends FragmentActivity implements View.OnClickListener {
     protected Dialog mProgress;
     protected Context mContext;
 
@@ -33,12 +32,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements O
             mProgress = null;
         }
     }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-
     protected void registerBroadcast(BroadcastReceiver broadcastReceiver, String action) {
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,
                 new IntentFilter(action));
@@ -63,5 +56,10 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements O
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             view.clearFocus();
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

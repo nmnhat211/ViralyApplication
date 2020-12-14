@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_top_welcome_screen" />
+        <include layout="@layout/top_welcome_screen" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         </RelativeLayout>
 
         <include
-            layout="@layout/layout_email_and_password_layout"
+            layout="@layout/email_and_password_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dp40" />
@@ -65,7 +65,7 @@
             android:layout_marginBottom="@dimen/dp40">
 
             <CheckBox
-                android:id="@+id/checkbox_remember"
+                android:id="@+id/cbx_remember"
                 style="@style/SubTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
     </LinearLayout>
 
     <include
-        layout="@layout/layout_bottom_welcome_screen_layout"
+        layout="@layout/bottom_layout"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />

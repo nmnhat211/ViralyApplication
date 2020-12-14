@@ -22,7 +22,7 @@ public class MainToolbarActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
         DrawerLayout fullView = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_main_toolbar_layout, null);
 //        FrameLayout activityContent = fullView.findViewById(R.id.);
-        getLayoutInflater().inflate(layoutResID, activityContent, true);
+//        getLayoutInflater().inflate(layoutResID, , true);
         super.setContentView(fullView);
         initView();
     }

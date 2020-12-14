@@ -15,9 +15,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.activity.WelcomeActivity"></activity>
         <activity android:name=".ui.activity.SignUpActivity" />
-        <activity android:name=".ui.activity.SignInActivity">
+        <activity android:name=".ui.activity.SignInActivity"/>
+        <activity android:name=".ui.activity.WelcomeActivity"/>
+        <activity android:name=".ui.activity.SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

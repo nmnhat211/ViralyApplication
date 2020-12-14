@@ -7,7 +7,7 @@
     android:padding="@dimen/dp40">
 
     <include
-        layout="@layout/layout_top_welcome_screen"
+        layout="@layout/top_welcome_screen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
@@ -38,7 +38,7 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button_create_account"
+            android:id="@+id/button_create_account_welcome"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp70"
@@ -49,7 +49,8 @@
     </LinearLayout>
 
     <include
-        layout="@layout/layout_bottom_welcome_screen_layout"
+        android:id="@+id/bottom_welcome"
+        layout="@layout/bottom_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
