@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_sign_in"
-                android:textColor="@color/colorLightOrange" />
+                android:textColor="@color/color_main" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

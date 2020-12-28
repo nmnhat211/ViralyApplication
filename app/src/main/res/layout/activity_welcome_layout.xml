@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_welcome_to_app"
-            android:textColor="@color/colorLightOrange" />
+            android:textColor="@color/color_main" />
 
         <TextView
             style="@style/SubTextViewStyle"

@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class SignInActivity extends BaseFragmentActivity {
     private Button btnLogin, btBottom;
-    private RelativeLayout llParent;
+    private RelativeLayout rlParent;
     private CheckBox cbxRememberMe;
     private TextView tvSignUpNow, tvForgotPassword;
     private TextInputLayout mTextInputEmail, mTextInputPassword;
@@ -49,7 +49,7 @@ public class SignInActivity extends BaseFragmentActivity {
     }
 
     private void initView() {
-        llParent = findViewById(R.id.root_login);
+        rlParent = findViewById(R.id.root_login);
         tvSignUpNow = findViewById(R.id.text_view_sign_up_now);
         tvForgotPassword = findViewById(R.id.text_view_forgot_password);
         mTextInputEmail = findViewById(R.id.text_input_mail);
@@ -93,50 +93,42 @@ public class SignInActivity extends BaseFragmentActivity {
     @SuppressLint("ClickableViewAccessibility")
     private void initEvent() {
 //        Remove focus for EditText
-        llParent.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    if (edtEmail.isFocused() || edtPassword.isFocused()) {
-                        Rect outRect = new Rect();
-                        edtEmail.getGlobalVisibleRect(outRect);
-                        edtPassword.getGlobalVisibleRect(outRect);
-                        if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
-                            edtEmail.clearFocus();
-                            edtPassword.clearFocus();
-                            InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                        }
+        rlParent.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                if (edtEmail.isFocused() || edtPassword.isFocused()) {
+                    Rect outRect = new Rect();
+                    edtEmail.getGlobalVisibleRect(outRect);
+                    edtPassword.getGlobalVisibleRect(outRect);
+                    if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
+                        edtEmail.clearFocus();
+                        edtPassword.clearFocus();
+                        InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     }
                 }
-                return false;
             }
+            return false;
         });
     }
 
     private void EmptyEditText() {
-        edtEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (edtEmail.getText().toString().trim().length() == 0) {
-                        mTextInputEmail.setError(getText(R.string.empty_email));
-                    }
-                } else {
-                    mTextInputEmail.setError(null);
+        edtEmail.setOnFocusChangeListener((view, hasFocus) -> {
+            if (!hasFocus) {
+                if (edtEmail.getText().toString().trim().length() == 0) {
+                    mTextInputEmail.setError(getText(R.string.empty_email));
                 }
+            } else {
+                mTextInputEmail.setError(null);
             }
         });
-        edtPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (edtPassword.getText().toString().trim().length() == 0) {
-                        mTextInputPassword.setError(getText(R.string.empty_password));
-                    }
-                } else {
-                    mTextInputPassword.setError(null);
+
+        edtPassword.setOnFocusChangeListener((view, hasFocus) -> {
+            if (!hasFocus) {
+                if (edtPassword.getText().toString().trim().length() == 0) {
+                    mTextInputPassword.setError(getText(R.string.empty_password));
                 }
+            } else {
+                mTextInputPassword.setError(null);
             }
         });
     }
@@ -158,7 +150,6 @@ public class SignInActivity extends BaseFragmentActivity {
                 dismissProgressDialog();
                 if (response.code() == 200) {
                     Log.e("status", "" +response.body().getIsAuthenticated());
-
                     Toast.makeText(SignInActivity.this, R.string.login_successfully, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(SignInActivity.this, R.string.unknown_username, Toast.LENGTH_SHORT).show();

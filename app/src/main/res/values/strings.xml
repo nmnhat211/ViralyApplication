@@ -3,6 +3,7 @@
     <string name="title_sign_in">Sign in</string>
     <string name="title_sign_up">Sign Up</string>
     <string name="name_hint">Name</string>
+    <string name="display_name">Display Name</string>
     <string name="username_hint">Username</string>
     <string name="email_hint">Email Address</string>
     <string name="password_hint">Password</string>
@@ -16,6 +17,8 @@
     <string name="unknown_username">Unknown username. Check again or try your email address</string>
     <string name="empty_email">Error: The username filed is empty.</string>
     <string name="empty_password">Error: The password filed is empty.</string>
+    <string name="empty_user_name">Error: The user name filed is empty.</string>
+    <string name="empty_display_name">Error: The display name filed is empty.</string>
     <string name="empty_username_and_password">Error: The username filed is empty.\nError: The password filed is empty.</string>
     <string name="i_agree_text">I agree to the\u0020</string>
     <string name="term_amp_conditions_text"><![CDATA[term & conditions]]></string>
@@ -27,5 +30,15 @@
     <string name="sign_up_with_google">Sign up with Google</string>
     <string name="content_text_view_of_welcome_screen">This is a social network to help you share your photos and videos with everyone!</string>
     <string name="have_account">Already have an account?</string>
+    <string name="home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_profile">My Profile</string>
+    <string name="my_inbox">My Inbox</string>
+    <string name="my_photos">My Photos</string>
+    <string name="my_connection">My Connection</string>
+    <string name="my_timeline">My Timeline</string>
+    <string name="my_setting">My Setting</string>
+    <string name="log_out">Log Out</string>
 
 </resources>

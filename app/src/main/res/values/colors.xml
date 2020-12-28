@@ -10,7 +10,9 @@
     <color name="colorBlue">#007AFF</color>
     <color name="colorGrey">#5c5a5c</color>
     <color name="colorError">#ef3e46</color>
-    <color name="colorLightOrange">#ff865a</color>
-    <color name="colorBackground">#faf9f7</color>
+    <color name="color_main">#ff865a</color>
+    <color name="color_background">#faf9f7</color>
+    <color name="color_background1">#80FAF9F7</color>
+
     <color name="mtrl_textinput_default_box_stroke_color">#FFFFFF</color>
 </resources>

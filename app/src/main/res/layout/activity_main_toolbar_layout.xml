@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -14,9 +14,12 @@
             android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp60"
-            android:background="@color/colorLightOrange"
+            android:background="@color/color_main"
             app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp">
+            app:contentInsetStart="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fl_fragment"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -29,9 +32,24 @@
                     android:id="@+id/rl_icon_left"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentLeft="true"
                     android:gravity="center_vertical">
 
+                    <ImageView
+                        android:id="@+id/iv_back_tool_bar"
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:background="@drawable/ic_action_back"
+                        android:backgroundTint="@color/colorWhite"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_menu_bar"
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:background="@drawable/ic_action_menu"
+                        android:backgroundTint="@color/colorWhite"
+                        android:visibility="gone" />
                 </RelativeLayout>
 
                 <me.grantland.widget.AutofitTextView
@@ -56,10 +74,26 @@
                     android:layout_alignParentRight="true"
                     android:gravity="center_vertical">
 
-                </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/iv_search_tool_bar"
+                        android:layout_width="@dimen/dp50"
+                        android:layout_height="@dimen/dp50"
+                        android:background="@drawable/ic_action_search"
+                        android:backgroundTint="@color/colorWhite"
+                        android:visibility="gone" />
 
+                </RelativeLayout>
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
-    </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

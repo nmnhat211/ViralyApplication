@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/root_signup"
     android:background="@color/colorWhite">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp300"
-        android:background="@color/colorLightOrange" />
+        android:background="@color/color_main" />
 
     <TextView
         android:id="@+id/text_view_title"
@@ -46,12 +47,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/password_hint">
+                    android:hint="@string/username_hint">
 
                     <EditText
                         android:id="@+id/edit_text_name"
                         style="@style/EditTextStyle"
                         android:layout_width="match_parent"
+                        android:maxLength="8"
                         android:layout_height="@dimen/dp70"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
@@ -61,18 +63,19 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_username"
+                    android:id="@+id/text_input_display_name"
                     style="@style/TextInputStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/username_hint">
+                    android:hint="@string/display_name">
 
                     <EditText
-                        android:id="@+id/edit_text_username"
+                        android:id="@+id/edit_text_display_name"
                         style="@style/EditTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp70"
+                        android:maxLength="28"
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:paddingHorizontal="@dimen/dp20" />
@@ -121,5 +124,11 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <include
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
