@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/top_welcome_screen" />
+        <include layout="@layout/include_icon_app_layout" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp70"
             android:text="@string/action_login_account"
-            android:theme="@style/ButtonTheme" />
+            android:theme="@style/button_theme_color_main" />
 
     </LinearLayout>
 

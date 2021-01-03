@@ -6,7 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.viralyapplication.R;
-import com.example.viralyapplication.ui.fragment.MainHomeFragment;
+import com.example.viralyapplication.ui.fragment.NewFeedFragment;
 import com.example.viralyapplication.ui.fragment.NotifyFragment;
 import com.example.viralyapplication.ui.fragment.ProfileFragment;
 import com.example.viralyapplication.ui.fragment.SearchFragment;
@@ -49,7 +49,7 @@ public class MainHomeActivity extends MainToolbarActivity {
         Fragment selectedFragment = null;
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
-                selectedFragment = new MainHomeFragment();
+                selectedFragment = new NewFeedFragment();
                 break;
             case R.id.nav_notify:
                 selectedFragment = new NotifyFragment();

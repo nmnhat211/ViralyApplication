@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorGreen">#4CAF50</color>
     <color name="colorSimpleText">#4C5353</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
@@ -9,10 +10,12 @@
     <color name="colorDarkYellow">#FEBC08</color>
     <color name="colorBlue">#007AFF</color>
     <color name="colorGrey">#5c5a5c</color>
-    <color name="colorError">#ef3e46</color>
+    <color name="colorRed">#ef3e46</color>
     <color name="color_main">#ff865a</color>
     <color name="color_background">#faf9f7</color>
     <color name="color_background1">#80FAF9F7</color>
+    <color name="color_background2">#33FAF9F7</color>
+    <color name="color_background3">#CCFAF9F7</color>
 
     <color name="mtrl_textinput_default_box_stroke_color">#FFFFFF</color>
 </resources>

@@ -22,5 +22,5 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="@string/title_sign_in"
-        android:theme="@style/ButtonTheme" />
+        android:theme="@style/button_theme_color_main" />
 </RelativeLayout>
