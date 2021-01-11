@@ -3,27 +3,30 @@ package com.example.viralyapplication.repository.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginModel {
-    @SerializedName("isAuthenticated")
-    @Expose
-    private Boolean isAuthenticated;
-    @SerializedName("user")
-    @Expose
-    private UserModel userModel;
+import java.io.Serializable;
 
-    public Boolean getIsAuthenticated() {
-        return isAuthenticated;
-    }
+public class LoginModel implements Serializable {
+        @SerializedName("isAuthenticated")
+        @Expose
+        private Boolean isAuthenticated;
+        @SerializedName("account")
+        @Expose
+        private UserModel account;
 
-    public void setIsAuthenticated(Boolean isAuthenticated) {
-        this.isAuthenticated = isAuthenticated;
-    }
+        public Boolean getIsAuthenticated() {
+            return isAuthenticated;
+        }
 
-    public UserModel getUserModel() {
-        return userModel;
-    }
+        public void setIsAuthenticated(Boolean isAuthenticated) {
+            this.isAuthenticated = isAuthenticated;
+        }
 
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
-    }
+        public UserModel getAccount() {
+            return account;
+        }
+
+        public void setAccount(UserModel account) {
+            this.account = account;
+        }
 }
+

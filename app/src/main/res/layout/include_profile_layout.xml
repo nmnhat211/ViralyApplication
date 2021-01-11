@@ -115,7 +115,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/gilroy_regular"
                 android:singleLine="true"
-                android:text="13"
+                android:text="0"
                 android:textColor="@color/colorGrey"
                 android:textSize="23sp"
                 android:textStyle="bold" />
@@ -139,7 +139,7 @@
                 android:layout_marginLeft="@dimen/dp30"
                 android:fontFamily="@font/gilroy_regular"
                 android:singleLine="true"
-                android:text="13"
+                android:text="0"
                 android:textColor="@color/colorGrey"
                 android:textSize="23sp"
                 android:textStyle="bold" />
@@ -154,7 +154,6 @@
                 android:text="@string/follower_text"
                 android:textColor="@color/colorGrey"
                 android:textSize="23sp" />
-
         </LinearLayout>
 
     </LinearLayout>

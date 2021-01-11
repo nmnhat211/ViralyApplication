@@ -2,16 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/dp15"
+    android:paddingBottom="@dimen/dp15">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/ctrs_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp15"
-        android:layout_marginTop="@dimen/dp15"
         android:layout_marginRight="@dimen/dp15"
+        android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_content_post"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,10 +22,7 @@
             android:id="@+id/ctrs_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/ln_name_and_time"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_gravity="center">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_avatar_user"
@@ -49,26 +49,26 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ln_name_and_time"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_marginRight="@dimen/dp10"
-            app:layout_constraintBottom_toBottomOf="@id/ctrs_avatar"
-            app:layout_constraintLeft_toRightOf="@+id/ctrs_avatar"
-            app:layout_constraintTop_toTopOf="@id/ctrs_avatar">
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_weight="9">
 
-            <TextView
+            <me.grantland.widget.AutofitTextView
                 android:id="@+id/tv_name_user_new_feed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:ellipsize="end"
                 android:fontFamily="@font/gilroy_bold"
-                android:text="nmnhat211"
+                android:text="username"
                 android:textColor="@color/color_main"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_time_posted"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:minTextSize="10sp" />
+
 
             <TextView
                 android:id="@+id/tv_time_posted"
@@ -86,28 +86,31 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/iv_optional"
-            android:layout_width="@dimen/dp50"
-            android:layout_height="@dimen/dp50"
-            android:layout_gravity="right"
-            android:background="@drawable/ic_more_options"
-            app:layout_constraintBottom_toBottomOf="@+id/ln_name_and_time"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ln_name_and_time" />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
+            <ImageView
+                android:id="@+id/iv_optional"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_more_options" />
+        </RelativeLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_content_post"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp15"
         android:layout_marginTop="@dimen/dp15"
         android:layout_marginRight="@dimen/dp15"
         android:fontFamily="@font/gilroy_medium"
-        android:text="Amazing good job bro!"
         android:textColor="@color/colorGrey"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/ctrs_image"
@@ -120,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp15"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/ctrs_bot"
+        app:layout_constraintBottom_toTopOf="@+id/ctrs_like_and_comment"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_content_post">
@@ -139,13 +142,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ctrs_bot"
+        android:id="@+id/ctrs_like_and_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp15"
         android:layout_marginTop="@dimen/dp15"
         android:layout_marginRight="@dimen/dp15"
-        app:layout_constraintBottom_toTopOf="@+id/view_line"
+        app:layout_constraintBottom_toTopOf="@+id/ctrs_content_comment_list"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ctrs_image">
@@ -200,16 +203,37 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:id="@+id/view_line"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctrs_content_comment_list"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/dp15"
-        android:background="@color/colorGrey1"
-        app:layout_constraintBottom_toTopOf="@+id/include_comment_of_user"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ctrs_bot" />
+        app:layout_constraintTop_toBottomOf="@+id/ctrs_like_and_comment">
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp15"
+            android:background="@color/colorGrey1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_content_no_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            android:fontFamily="@font/gilroy_light_italic"
+            android:text="@string/being_the_first_comment_text"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include
         android:id="@+id/include_comment_of_user"
@@ -219,7 +243,6 @@
         android:layout_marginLeft="@dimen/dp15"
         android:layout_marginTop="@dimen/dp15"
         android:layout_marginRight="@dimen/dp15"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

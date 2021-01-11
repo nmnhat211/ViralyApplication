@@ -1,14 +1,42 @@
 package com.example.viralyapplication.ui.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.viralyapplication.R;
 import com.example.viralyapplication.utility.Utils;
 
 public class WelcomeActivity extends BaseFragmentActivity {
+    public static final String KEY_AUTO_LOGIN = "WelcomeActivity_key_auto_login";
+    private BroadcastReceiver broadcastReceiverLogin;
+
+
+    @Override
+    protected void registerBroadcast(BroadcastReceiver broadcastReceiver, String action) {
+
+//        broadcastReceiverLogin = new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                if (intent.getAction().equals(KEY_AUTO_LOGIN)){
+//                    Utils.goToSigInActivity(mContext);
+//                    finish();
+//                }
+//            }
+//        };
+//        registerBroadcast(broadcastReceiverLogin, KEY_AUTO_LOGIN);
+
+    }
+
+    @Override
+    protected void unregisterBroadcast(BroadcastReceiver broadcastReceiver) {
+        super.unregisterBroadcast(broadcastReceiver);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +48,12 @@ public class WelcomeActivity extends BaseFragmentActivity {
     }
 
     private void initView() {
-        Button btnCreateAccount = findViewById(R.id.button_of_bottom_welcome_screen);
-        Button btnSigInAccount = findViewById(R.id.button_create_account_welcome);
-        btnCreateAccount.setOnClickListener(this);
-        btnSigInAccount.setOnClickListener(this);
+        Button btnSignIn = findViewById(R.id.button_of_bottom_welcome_screen);
+        Button btnSignUp = findViewById(R.id.button_create_account_welcome);
+        btnSignIn.setOnClickListener(this);
+        btnSignUp.setOnClickListener(this);
+        btnSignIn.setText(getText(R.string.title_sign_in));
+
     }
 
     @Override
@@ -32,12 +62,22 @@ public class WelcomeActivity extends BaseFragmentActivity {
         switch (view.getId()) {
             case R.id.button_of_bottom_welcome_screen:
                 Utils.goToSigInActivity(this);
-                finish();
                 break;
             case R.id.button_create_account_welcome:
                 Utils.goToSigUpActivity(this);
-                finish();
                 break;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterBroadcast(broadcastReceiverLogin);
     }
 }

@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dp20"
-            android:text="@string/new_feed_text" />
+            android:text="@string/news_feed_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,17 +35,36 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_avatar_user"
-                    android:layout_width="@dimen/dp60"
-                    android:layout_height="@dimen/dp60"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/dp15"
-                    android:layout_marginEnd="@dimen/dp15"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_profile"
-                    app:civ_border_color="@color/color_main"
-                    app:civ_border_width="@dimen/dp3" />
+                    android:layout_marginEnd="@dimen/dp15">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_avatar_user"
+                        android:layout_width="@dimen/dp60"
+                        android:layout_height="@dimen/dp60"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:civ_border_color="@color/colorWhite"
+                        app:civ_border_width="@dimen/dp1" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:background="@drawable/bg_green_oval"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar_user"
+                        app:layout_constraintRight_toRightOf="@id/iv_avatar_user" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -56,21 +75,12 @@
                     <TextView
                         android:id="@+id/tv_name_user_new_feed"
                         android:layout_width="wrap_content"
+                        android:text="nmnhat211"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gilroy_bold"
                         android:maxLines="2"
                         android:textColor="@color/colorGrey"
                         android:textSize="20sp" />
-
-                    .3<TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_public"
-                        android:drawablePadding="@dimen/dp10"
-                        android:fontFamily="@font/gilroy_medium"
-                        android:text="@string/public_text"
-                        android:textColor="@color/colorGrey"
-                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -84,13 +94,34 @@
                 android:layout_marginTop="@dimen/dp20"
                 android:background="@color/color_background1"
                 android:gravity="top"
+                android:text="Amazing good job bro!"
                 android:hint="@string/status_hint_text"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine"
                 android:minHeight="@dimen/dp100"
                 android:padding="@dimen/dp10"
-                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/gilroy_medium"
+                android:textColor="@color/colorGrey"
                 android:textSize="20sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/dp20">
+
+                <ImageView
+                    android:id="@+id/iv_image_user_posted"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/dp350"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/binz"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:id="@+id/ln_option_func"

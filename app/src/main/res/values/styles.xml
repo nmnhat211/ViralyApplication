@@ -59,17 +59,18 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="button_theme_color_white" parent="ThemeOverlay.AppCompat.Dark">
+    <style name="button_theme_color_white" parent="button_theme_color_main">
         <item name="colorAccent">@color/color_background1</item>
-        <item name="android:textColor">@color/color_main</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">18sp</item>
-        <item name="fontFamily">@font/gilroy_bold</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
+
+
+    <style name="AppThemeToolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorBlack</item>
+    </style>
+
 
 </resources>

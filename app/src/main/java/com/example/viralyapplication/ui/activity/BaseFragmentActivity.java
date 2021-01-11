@@ -12,8 +12,10 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.viralyapplication.R;
+import com.example.viralyapplication.ui.event.BaseEvent;
 
 public abstract class BaseFragmentActivity extends FragmentActivity implements View.OnClickListener {
+    protected final String TAG = this.getClass().getSimpleName();
     protected Dialog mProgress;
     protected Context mContext;
 
@@ -56,6 +58,10 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             view.clearFocus();
         }
+    }
+
+    protected boolean checkFilterName(BaseEvent event){
+        return TAG.equalsIgnoreCase(event.getFilterName());
     }
 
     @Override

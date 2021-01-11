@@ -7,4 +7,9 @@ public class Constrain {
     public static final String IS_ACCOUNT_LOGGED = "is-account-logged";
     public static final String IS_ACCOUNT_LOGGED_OUT = "is-account-logged_out";
     public static String BASE_URL = "http://viraly-server.herokuapp.com/";
+    public static final int IS_SUCCESS = 200;
+    public static final int IS_BAB_REQUEST = 400;
+    public static final int IS_UNAUTHORIZED = 401;
+    public static final int IS_FORBIDDEN = 403;
+    public static final String IS_OK = "ok";
 }

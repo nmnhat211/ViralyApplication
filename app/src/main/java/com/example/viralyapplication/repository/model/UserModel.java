@@ -3,7 +3,9 @@ package com.example.viralyapplication.repository.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserModel {
+import java.io.Serializable;
+
+public class UserModel implements Serializable {
     @SerializedName("is_banned")
     @Expose
     private Boolean isBanned;
@@ -13,15 +15,21 @@ public class UserModel {
     @SerializedName("_id")
     @Expose
     private String id;
-    @SerializedName("email")
-    @Expose
-    private String email;
     @SerializedName("username")
     @Expose
     private String username;
+    @SerializedName("email")
+    @Expose
+    private String email;
     @SerializedName("display_name")
     @Expose
     private String displayName;
+    @SerializedName("avatar")
+    @Expose
+    private String avatar;
+    @SerializedName("uid")
+    @Expose
+    private Float uid;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -31,6 +39,9 @@ public class UserModel {
     @SerializedName("__v")
     @Expose
     private Integer v;
+    @SerializedName("language")
+    @Expose
+    private String language;
 
     public Boolean getIsBanned() {
         return isBanned;
@@ -56,14 +67,6 @@ public class UserModel {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -72,12 +75,36 @@ public class UserModel {
         this.username = username;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getDisplayName() {
         return displayName;
     }
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Float getUid() {
+        return uid;
+    }
+
+    public void setUid(Float uid) {
+        this.uid = uid;
     }
 
     public String getCreatedAt() {
@@ -102,5 +129,13 @@ public class UserModel {
 
     public void setV(Integer v) {
         this.v = v;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

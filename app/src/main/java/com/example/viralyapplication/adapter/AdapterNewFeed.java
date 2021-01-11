@@ -12,19 +12,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.viralyapplication.R;
+import com.example.viralyapplication.repository.model.FooterModel;
+
+import java.util.List;
 
 public class AdapterNewFeed extends RecyclerView.Adapter {
 
-    List<> mRecyclerViewItems;
+    List<RecyclerViewItem> mRecyclerViewItems;
     private static final int HEADER_ITEM = 0;
     private static final int FOOTER_ITEM = 1;
     private static final int FOOD_ITEM = 2;
     Context mContext;
 
 
-    public Adapter(List<RecyclerViewItem> mRecyclerViewItems, Context mContext) {
+    public void Adapter(List<RecyclerViewItem> mRecyclerViewItems, Context mContext) {
         this.mRecyclerViewItems = mRecyclerViewItems;
         this.mContext = mContext;
     }
@@ -51,50 +53,47 @@ public class AdapterNewFeed extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         RecyclerViewItem mRecyclerViewItem = mRecyclerViewItems.get(position);
-        if (holder instanceof HeaderHolder) {
-            HeaderHolder mHeaderHolder = (HeaderHolder) holder;
-            HeaderModel mHeader = (HeaderModel) mRecyclerViewItem;
-
-            mHeaderHolder.tvNameUser.setText(mHeader.getHeaderText());
-            Glide.with(mContext).load(mHeader.getImageUrl()).into(mHeaderHolder.ivAvatarUser);
-
-        } else if (holder instanceof FooterHolder) {
-            FooterHolder mFooterHolder = (FooterHolder) holder;
-            FooterModel mFooter = (FooterModel) mRecyclerViewItem;
-
-            mFooterHolder.mTexViewQuote.setText(mFooter.getQuote());
-            mFooterHolder.mTextViewAuthor.setText(mFooter.getAuthor());
-            Glide.with(mContext).load(mFooter.getImageUrl()).into(mFooterHolder.mImageViewFooter);
-
-        } else if (holder instanceof FoodItemHolder) {
-            FoodItemHolder mFoodItemHolder = (FoodItemHolder) holder;
-            FoodItem mFood = (FoodItem) mRecyclerViewItem;
-
-            mFoodItemHolder.mTextViewFoodTitle.setText(mFood.getTitle());
-            mFoodItemHolder.mTextViewDescription.setText(mFood.getDescription());
-            mFoodItemHolder.mTextViewPrice.setText(mFood.getPrice());
-            Glide.with(mContext).load(mFood.getImageUrl()).into(mFoodItemHolder.mImageViewFood);
-
-            if (mFood.isHot()) {
-                mFoodItemHolder.mTextViewIsHot.setVisibility(View.VISIBLE);
-            } else {
-                mFoodItemHolder.mTextViewIsHot.setVisibility(View.GONE);
-            }
-
-        }
+//        if (holder instanceof HeaderHolder) {
+//            HeaderHolder mHeaderHolder = (HeaderHolder) holder;
+//            HeaderModel mHeader = (HeaderModel) mRecyclerViewItem;
+//            mHeaderHolder.tvNameUser.setText(mHeader.getHeaderText());
+//            Glide.with(mContext).load(mHeader.getImageUrl()).into(mHeaderHolder.ivAvatarUser);
+//        } else if (holder instanceof FooterHolder) {
+//            FooterHolder mFooterHolder = (FooterHolder) holder;
+//            FooterModel mFooter = (FooterModel) mRecyclerViewItem;
+//
+//            mFooterHolder.tvGmailApp.setText(R.string.support_viraly_com_text);
+//            mFooterHolder.tvNameApp.setText(R.string.infor_content_text);
+//            Glide.with(mContext).load(mFooter.getImage()).placeholder(R.drawable.viraly_145x197).into(mFooterHolder.ivLogoApp);
+//        } else if (holder instanceof FoodItemHolder) {
+//            FoodItemHolder mFoodItemHolder = (FoodItemHolder) holder;
+//            FoodItem mFood = (FoodItem) mRecyclerViewItem;
+//            mFoodItemHolder.mTextViewFoodTitle.setText(mFood.getTitle());
+//            mFoodItemHolder.mTextViewDescription.setText(mFood.getDescription());
+//            mFoodItemHolder.mTextViewPrice.setText(mFood.getPrice());
+//            Glide.with(mContext).load(mFood.getImageUrl()).into(mFoodItemHolder.mImageViewFood);
+//
+//            if (mFood.isHot()) {
+//                mFoodItemHolder.mTextViewIsHot.setVisibility(View.VISIBLE);
+//            } else {
+//                mFoodItemHolder.mTextViewIsHot.setVisibility(View.GONE);
+//            }
+//
+//        }
 
     }
 
     @Override
     public int getItemViewType(int position) {
         RecyclerViewItem mRecyclerViewItem = mRecyclerViewItems.get(position);
-        if (mRecyclerViewItem instanceof HeaderModel) {
-            return HEADER_ITEM;
-        } else if (mRecyclerViewItem instanceof FooterModel) {
-            return FOOTER_ITEM;
-        } else if (mRecyclerViewItem instanceof FoodItem) {
-            return FOOD_ITEM;
-        } else return super.getItemViewType(position);
+//        if (mRecyclerViewItem instanceof HeaderModel) {
+//            return HEADER_ITEM;
+//        } else if (mRecyclerViewItem instanceof FooterModel) {
+//            return FOOTER_ITEM;
+//        } else if (mRecyclerViewItem instanceof FoodItem) {
+//            return FOOD_ITEM;
+//        } else
+        return super.getItemViewType(position);
     }
 
     @Override
@@ -113,10 +112,10 @@ public class AdapterNewFeed extends RecyclerView.Adapter {
             tvNameUser = itemView.findViewById(R.id.tv_name_user_new_feed);
             tvTimePost = itemView.findViewById(R.id.tv_time_posted);
             tvContentPost = itemView.findViewById(R.id.tv_content_post);
-            tvTitleLikeNumber = itemView.findViewById(R.id.tv_title_number_like);
-            tvTitleCommentNumber = itemView.findViewById(R.id.tv_title_number_comment);
-            tvLikeAction = itemView.findViewById(R.id.tv_like_action);
-            tvCommentAction = itemView.findViewById(R.id.tv_comment_action);
+//            tvTitleLikeNumber = itemView.findViewById(R.id.tv_title_number_like);
+//            tvTitleCommentNumber = itemView.findViewById(R.id.tv_title_number_comment);
+//            tvLikeAction = itemView.findViewById(R.id.tv_like_action);
+//            tvCommentAction = itemView.findViewById(R.id.tv_comment_action);
             ivOptional = itemView.findViewById(R.id.iv_optional);
             ivAvatar = itemView.findViewById(R.id.iv_avatar_user);
             ivUserPosted = itemView.findViewById(R.id.iv_image_user_posted);
@@ -153,5 +152,7 @@ public class AdapterNewFeed extends RecyclerView.Adapter {
             ivLogoApp = itemView.findViewById(R.id.iv_logo_app);
         }
     }
+
+
 }
 

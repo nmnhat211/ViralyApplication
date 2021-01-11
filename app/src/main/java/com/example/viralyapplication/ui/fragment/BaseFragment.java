@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Rect;
@@ -25,19 +24,16 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.example.viralyapplication.R;
+import com.example.viralyapplication.ui.event.BaseEvent;
 
 import java.util.ArrayList;
 
 public class BaseFragment extends Fragment implements OnClickListener {
-
-
+    protected final String TAG = this.getClass().getSimpleName();
     protected Context mContext;
     private AlertDialog alertDialog;
     protected Dialog mProgress;
-
-
     private static final String RETAINED_FRAGMENT_TAG = "retained_fragment";
-    protected final String TAG = this.getClass().getSimpleName();
 
 
     @Override
@@ -173,6 +169,10 @@ public class BaseFragment extends Fragment implements OnClickListener {
         } else {
             scrollView.scrollTo(location[0], location[1]);
         }
+    }
+
+    protected boolean checkFilterName(BaseEvent event){
+        return TAG.equalsIgnoreCase(event.getFilterName());
     }
 
 }

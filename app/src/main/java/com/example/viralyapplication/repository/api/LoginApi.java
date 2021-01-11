@@ -28,7 +28,6 @@ public interface LoginApi {
     @GET("users/verify")
     Call<EmailVerifyModel> getVerify();
 
-    @Headers("Content-Type: application/json")
 
     @Multipart
     @POST("users/register")
@@ -36,7 +35,11 @@ public interface LoginApi {
                                  @Part("username") String username,
                                  @Part("avatar") String avatar,
                                  @Part("display_name") String display_name,
-                                 @Header("password") String password);
+                                 @Part("password") String password);
+
+    @Headers("Content-Type: application/json")
+    @POST("users/register")
+    Call<UserModel> registerUser(@Body Map<String, String> body_account);
 
     @Multipart
     @POST("users/avatar")
